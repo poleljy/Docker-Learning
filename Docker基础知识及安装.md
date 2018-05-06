@@ -114,7 +114,7 @@ $ sudo systemctl disable docker
 
 ```
 ### 配置官方加速器
-1. 对于使用 `systemd` 的系统，应该通过编辑服务配置文件 `docker.service` 来进行加速器的配置（不推荐）
+1. 对于使用 `systemd` 的系统，应该通过编辑服务配置文件 `docker.service` 来进行加速器的配置（推荐）
 
 找到`docker.service`所在目录：
 $ rpm -qa | grep docker
