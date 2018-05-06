@@ -114,7 +114,8 @@ $ sudo systemctl disable docker
 
 ```
 ### 配置官方加速器
-1. 对于使用 `systemd` 的系统，应该通过编辑服务配置文件 `docker.service` 来进行加速器的配置。
+1. 对于使用 `systemd` 的系统，应该通过编辑服务配置文件 `docker.service` 来进行加速器的配置（不推荐）
+
 找到`docker.service`所在目录：
 $ rpm -qa | grep docker
 docker-ce-18.03.1.ce-1.el7.centos.x86_64
@@ -144,5 +145,7 @@ $ docker run hello-world
 ```
 ### 参考资料
 [Docker官网 Get Started ](https://docs.docker.com/get-started/)
+
 [Get Docker CE for CentOS](https://docs.docker.com/install/linux/docker-ce/centos/#upgrade-docker-ce)
+
 [几张图帮你理解 docker 基本原理及快速入门](https://www.cnblogs.com/SzeCheng/p/6822905.html)
