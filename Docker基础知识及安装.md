@@ -114,17 +114,24 @@ $ sudo systemctl disable docker
 
 ```
 ### 配置官方加速器
+1. 对于使用 `systemd` 的系统，应该通过编辑服务配置文件 `docker.service` 来进行加速器的配置。
+找到`docker.service`所在目录：
+$ rpm -qa | grep docker
+docker-ce-18.03.1.ce-1.el7.centos.x86_64
+$ rpm -ql docker-ce-18.03.1.ce-1.el7.centos.x86_64 | grep docker.service
+/usr/lib/systemd/system/docker.service
+
+修改`docker.service`中`ExecStart`如下：
+ExecStart=/usr/bin/dockerd --registry-mirror=https://registry.docker-cn.com
+
+2. 通过daemon.json文件配置（不推荐）
 ```
 $ vim /etc/docker/daemon.json
- 
 {
  "registry-mirrors": ["https://registry.docker-cn.com"]
 }
-
-# 其他参考：
-http://www.jb51.net/article/116873.htm
-http://www.jb51.net/article/112921.htm
 ```
+
 ### 非root用户使用docker
 ```
 $ sudo groupadd docker
