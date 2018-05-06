@@ -186,4 +186,6 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 # 停止并移除所有（正在运行的和已经停止的）container : docker rm -f $(docker ps -qa)
 
 # 重新启动container : docker restart [container id]
+
+# 清理掉所有处于终止状态的容器 ： docker container prune
 ```
